@@ -24,22 +24,6 @@ extension Array where Element == Game {
     }
 }
 
-func mapCategoryResponsesToEntities(
-  input categoryResponses: GameResponse
-) -> [GameModel] {
-    return categoryResponses.results.map { game in
-        return GameModel(
-            id: game.id ?? 0,
-            name: game.name ?? "",
-            released: game.released,
-            backgroundImage: game.backgroundImage ?? "",
-            rating: game.rating ?? 0.0,
-            description: game.description ?? "",
-            playtime: game.playtime ?? 0
-        )
-  }
-}
-
 extension GameResponse {
     func mapToModel() -> [GameModel] {
         self.results.map { (game) in

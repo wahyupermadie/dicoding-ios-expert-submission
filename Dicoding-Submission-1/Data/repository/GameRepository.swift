@@ -28,7 +28,7 @@ class GameRepositoryImpl: GameRepository {
                 if result.count <= 0 {
                     return self.remoteDataSource.getGames(search: search)!
                         .map {
-                            mapCategoryResponsesToEntities(input: $0)
+                            $0.mapToModel()
                         }.flatMap{
                             self.localDataSource.setLocalData(games: $0)
                         }.flatMap { _ in
