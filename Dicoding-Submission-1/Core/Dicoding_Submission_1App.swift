@@ -13,7 +13,7 @@ struct Dicoding_Submission_1App: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(repository: Resolver.resolve())
+            ContentView(viewModel: Resolver.resolve())
         }
     }
 }

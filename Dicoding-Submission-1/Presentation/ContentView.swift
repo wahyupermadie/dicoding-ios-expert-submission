@@ -9,20 +9,26 @@ import SwiftUI
 import Resolver
 
 struct ContentView: View {
-    let repository: GameRepository
-    init(repository: GameRepository) {
-        self.repository = repository
+    @ObservedObject var viewModel: HomeViewModel
+    
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
     }
+
     var body: some View {
         Text("Hello, world!")
             .padding()
-            .onAppear(perform: {repository.getGames(search: nil)})
+            .onAppear(perform: {
+                        self.viewModel.getCategories()
+                
+                }
+            )
     }
 }
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(repository: Resolver.resolve())
+        ContentView(viewModel: Resolver.resolve())
     }
 }

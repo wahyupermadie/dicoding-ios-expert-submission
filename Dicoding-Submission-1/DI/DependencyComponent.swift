@@ -7,20 +7,37 @@
 
 import Foundation
 import Resolver
-
+import RealmSwift
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
-        registerNetworkService()
+        registerDataService()
+        resgiterHomeService()
     }
     
-    public static func registerNetworkService() {
+    public static func registerDataService() {
+        register {
+            try! Realm()
+        }
+        
+        register {
+            LocalDataSourceImpl(realm: resolve()) as LocalDataSource
+        }
+        
         register {
             URL(string: "https://api.rawg.io/api/")!
         }
         
+        register{
+            RemoteDataSourceImpl(baseUrl: resolve()) as RemoteDataSource
+        }
+        
         register {
-            GameRepositoryImpl(baseUrl: resolve()) as GameRepository
+            GameRepositoryImpl(remoteDataSource: resolve(), localDataSource: resolve()) as GameRepository
+        }
+        
+        register {
+            GameDomainImpl(gameRepository: resolve()) as GameDomain
         }
     }
 }

@@ -9,11 +9,15 @@ import Foundation
 import Combine
 
 protocol GameDomain {
-    func getGames(search: String?) -> AnyPublisher<GameResponse, Error>
+    func getGames(search: String?) -> AnyPublisher<[GameModel], Error>
 }
 
 class GameDomainImpl: GameDomain {
-    func getGames(search: String?) -> AnyPublisher<GameResponse, Error> {
-        <#code#>
+    let gameRepository: GameRepository
+    init(gameRepository: GameRepository) {
+        self.gameRepository = gameRepository
+    }
+    func getGames(search: String?) -> AnyPublisher<[GameModel], Error> {
+        return gameRepository.getGames(search: search)
     }
 }

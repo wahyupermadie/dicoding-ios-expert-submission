@@ -27,6 +27,14 @@
 		890C153E257E4B5800DA8D53 /* DependencyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C153D257E4B5800DA8D53 /* DependencyComponent.swift */; };
 		890C1546257E535D00DA8D53 /* GameDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1545257E535D00DA8D53 /* GameDomain.swift */; };
 		890C154C257E56EE00DA8D53 /* LocalGameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C154B257E56EE00DA8D53 /* LocalGameEntity.swift */; };
+		890C1552257E609D00DA8D53 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1551257E609D00DA8D53 /* LocalDataSource.swift */; };
+		890C1558257E6DA700DA8D53 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1557257E6DA700DA8D53 /* GameModel.swift */; };
+		890C1563257E6FF400DA8D53 /* ObjMapper+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1562257E6FF400DA8D53 /* ObjMapper+Ext.swift */; };
+		890C1568257E746C00DA8D53 /* ErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1567257E746C00DA8D53 /* ErrorState.swift */; };
+		890C156E257E7B9000DA8D53 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C156D257E7B9000DA8D53 /* RemoteDataSource.swift */; };
+		890C157E257E878C00DA8D53 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C157D257E878C00DA8D53 /* HomeView.swift */; };
+		890C1586257E879800DA8D53 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1585257E879800DA8D53 /* HomeViewModel.swift */; };
+		890C158C257E89B800DA8D53 /* HomeDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C158B257E89B800DA8D53 /* HomeDI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +82,14 @@
 		890C153D257E4B5800DA8D53 /* DependencyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyComponent.swift; sourceTree = "<group>"; };
 		890C1545257E535D00DA8D53 /* GameDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDomain.swift; sourceTree = "<group>"; };
 		890C154B257E56EE00DA8D53 /* LocalGameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGameEntity.swift; sourceTree = "<group>"; };
+		890C1551257E609D00DA8D53 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		890C1557257E6DA700DA8D53 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		890C1562257E6FF400DA8D53 /* ObjMapper+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjMapper+Ext.swift"; sourceTree = "<group>"; };
+		890C1567257E746C00DA8D53 /* ErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorState.swift; sourceTree = "<group>"; };
+		890C156D257E7B9000DA8D53 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		890C157D257E878C00DA8D53 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		890C1585257E879800DA8D53 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		890C158B257E89B800DA8D53 /* HomeDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDI.swift; sourceTree = "<group>"; };
 		894E56EE3F59D5A7337002C9 /* Pods-Dicoding-Submission-1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dicoding-Submission-1.release.xcconfig"; path = "Target Support Files/Pods-Dicoding-Submission-1/Pods-Dicoding-Submission-1.release.xcconfig"; sourceTree = "<group>"; };
 		9EE84D42DA65D58FDD7B010B /* Pods-Dicoding-Submission-1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dicoding-Submission-1Tests.release.xcconfig"; path = "Target Support Files/Pods-Dicoding-Submission-1Tests/Pods-Dicoding-Submission-1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BFBC857FE7673BE062763511 /* Pods-Dicoding-Submission-1-Dicoding-Submission-1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dicoding-Submission-1-Dicoding-Submission-1UITests.debug.xcconfig"; path = "Target Support Files/Pods-Dicoding-Submission-1-Dicoding-Submission-1UITests/Pods-Dicoding-Submission-1-Dicoding-Submission-1UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +209,8 @@
 		890C14E6257E0A0500DA8D53 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				890C156C257E7B5000DA8D53 /* remote */,
+				890C1556257E6D9800DA8D53 /* model */,
 				890C1501257E2D7A00DA8D53 /* entity */,
 				890C1500257E2D7500DA8D53 /* local */,
 				890C14FF257E2D7000DA8D53 /* domain */,
@@ -204,6 +222,7 @@
 		890C14E7257E0A0A00DA8D53 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				890C157C257E877F00DA8D53 /* home */,
 				890C149F257E053E00DA8D53 /* ContentView.swift */,
 			);
 			path = Presentation;
@@ -213,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				890C151F257E36E000DA8D53 /* Common+Ext.swift */,
+				890C1562257E6FF400DA8D53 /* ObjMapper+Ext.swift */,
+				890C1567257E746C00DA8D53 /* ErrorState.swift */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -247,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				890C154A257E56DE00DA8D53 /* entity */,
+				890C1551257E609D00DA8D53 /* LocalDataSource.swift */,
 			);
 			path = local;
 			sourceTree = "<group>";
@@ -268,6 +290,40 @@
 				890C154B257E56EE00DA8D53 /* LocalGameEntity.swift */,
 			);
 			path = entity;
+			sourceTree = "<group>";
+		};
+		890C1556257E6D9800DA8D53 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				890C1557257E6DA700DA8D53 /* GameModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		890C156C257E7B5000DA8D53 /* remote */ = {
+			isa = PBXGroup;
+			children = (
+				890C156D257E7B9000DA8D53 /* RemoteDataSource.swift */,
+			);
+			path = remote;
+			sourceTree = "<group>";
+		};
+		890C157C257E877F00DA8D53 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				890C158A257E89A900DA8D53 /* di */,
+				890C157D257E878C00DA8D53 /* HomeView.swift */,
+				890C1585257E879800DA8D53 /* HomeViewModel.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		890C158A257E89A900DA8D53 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				890C158B257E89B800DA8D53 /* HomeDI.swift */,
+			);
+			path = di;
 			sourceTree = "<group>";
 		};
 		8D055030FBDCAC255AA0F189 /* Pods */ = {
@@ -520,19 +576,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890C1568257E746C00DA8D53 /* ErrorState.swift in Sources */,
 				890C1516257E2E2E00DA8D53 /* Genre.swift in Sources */,
 				890C14A0257E053E00DA8D53 /* ContentView.swift in Sources */,
+				890C1586257E879800DA8D53 /* HomeViewModel.swift in Sources */,
 				890C154C257E56EE00DA8D53 /* LocalGameEntity.swift in Sources */,
+				890C156E257E7B9000DA8D53 /* RemoteDataSource.swift in Sources */,
 				890C1520257E36E000DA8D53 /* Common+Ext.swift in Sources */,
 				890C1539257E4A3F00DA8D53 /* Resolver.swift in Sources */,
+				890C1558257E6DA700DA8D53 /* GameModel.swift in Sources */,
 				890C149E257E053E00DA8D53 /* Dicoding_Submission_1App.swift in Sources */,
 				890C1546257E535D00DA8D53 /* GameDomain.swift in Sources */,
 				890C1504257E2DBF00DA8D53 /* GameRepository.swift in Sources */,
 				890C150C257E2DF900DA8D53 /* GameResponse.swift in Sources */,
+				890C1563257E6FF400DA8D53 /* ObjMapper+Ext.swift in Sources */,
 				890C151B257E2EE100DA8D53 /* Clip.swift in Sources */,
+				890C1552257E609D00DA8D53 /* LocalDataSource.swift in Sources */,
+				890C158C257E89B800DA8D53 /* HomeDI.swift in Sources */,
 				890C1534257E4A2500DA8D53 /* Injectable.swift in Sources */,
 				890C153E257E4B5800DA8D53 /* DependencyComponent.swift in Sources */,
 				890C1511257E2E1200DA8D53 /* Game.swift in Sources */,
+				890C157E257E878C00DA8D53 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
