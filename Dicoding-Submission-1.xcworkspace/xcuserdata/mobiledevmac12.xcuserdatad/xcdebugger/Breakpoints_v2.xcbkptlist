@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "12C2C7A8-5DAF-4E4D-8B7E-BFCB693B2860"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dicoding-Submission-1/Data/repository/GameRepository.swift"
@@ -72,14 +72,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5CAEB643-ABB8-4834-9671-863C9AFC2590"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dicoding-Submission-1/Data/local/LocalDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "getLocalData(query:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -88,14 +88,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "108713DE-2DAE-4C46-8619-3075FC0F515D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dicoding-Submission-1/Data/local/LocalDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "getLocalData(query:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -104,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "BB7FB9FA-A3FE-40EA-B6CC-4FCF5780D34B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dicoding-Submission-1/Data/repository/GameRepository.swift"
@@ -120,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FA30B797-CED7-477E-9CEF-45EA9B0A9DFB"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dicoding-Submission-1/Data/repository/GameRepository.swift"
@@ -136,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B5585E5D-5A79-49D7-AFA9-23B581CB646D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dicoding-Submission-1/Data/repository/GameRepository.swift"
@@ -152,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "70C5FFA6-6B0B-40B1-9EB9-9A07AB4B62E4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dicoding-Submission-1/Data/repository/GameRepository.swift"
@@ -168,7 +168,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5C2D5185-9984-47B5-A690-6637FE68E8F5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dicoding-Submission-1/Data/repository/GameRepository.swift"
@@ -178,6 +178,54 @@
             endingLineNumber = "33"
             landmarkName = "getGames(search:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3AB3D56E-3022-40B4-9259-4F440E062A5E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dicoding-Submission-1/Data/repository/GameRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getGames(search:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3AB3D56E-3022-40B4-9259-4F440E062A5E - 51dee602a678f79f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Dicoding_Submission_1.GameModel&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Dicoding_Submission_1.GameModel&gt;, Swift.Error&gt; in Dicoding_Submission_1.GameRepositoryImpl.getGames(search: Swift.Optional&lt;Swift.String&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Dicoding_Submission_1.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Dicoding-Submission-1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobiledevmac12/Engineering/IosProject/Dicoding-Submission-1/Dicoding-Submission-1/Data/repository/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "846">
+               </Location>
+               <Location
+                  uuid = "3AB3D56E-3022-40B4-9259-4F440E062A5E - 50511e4faae7cf8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Dicoding_Submission_1.GameResponse) -&gt; Swift.Array&lt;Dicoding_Submission_1.GameModel&gt; in closure #1 (Swift.Array&lt;Dicoding_Submission_1.GameModel&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Dicoding_Submission_1.GameModel&gt;, Swift.Error&gt; in Dicoding_Submission_1.GameRepositoryImpl.getGames(search: Swift.Optional&lt;Swift.String&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Dicoding_Submission_1.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Dicoding-Submission-1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobiledevmac12/Engineering/IosProject/Dicoding-Submission-1/Dicoding-Submission-1/Data/repository/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

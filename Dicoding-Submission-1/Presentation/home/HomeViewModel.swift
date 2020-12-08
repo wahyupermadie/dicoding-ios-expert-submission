@@ -12,13 +12,15 @@ class HomeViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     @Published var loadingState: Bool = false
     @Published var errorMessage: String = ""
-    let gameDomain: GameDomain
-    init(gameDomain: GameDomain) {
-        self.gameDomain = gameDomain
+    @Published var games: [GameModel] = []
+    let homeDomain: HomeDomain
+    init(homeDomain: HomeDomain) {
+        self.homeDomain = homeDomain
     }
     
-    func getCategories() {
-        gameDomain.getGames(search: nil)
+    func getGames(name: String?) {
+        self.loadingState = true
+        homeDomain.getGames(search: name)
           .receive(on: RunLoop.main)
           .sink(receiveCompletion: { completion in
             switch completion {
@@ -27,8 +29,8 @@ class HomeViewModel: ObservableObject {
             case .finished:
               self.loadingState = false
             }
-          }, receiveValue: { categories in
-            
+          }, receiveValue: { games in
+            self.games = games
           })
           .store(in: &cancellables)
       }

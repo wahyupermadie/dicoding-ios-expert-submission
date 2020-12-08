@@ -13,6 +13,7 @@ extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
         registerDataService()
         resgiterHomeService()
+        registerDetailService()
     }
     
     public static func registerDataService() {
@@ -34,10 +35,6 @@ extension Resolver: ResolverRegistering {
         
         register {
             GameRepositoryImpl(remoteDataSource: resolve(), localDataSource: resolve()) as GameRepository
-        }
-        
-        register {
-            GameDomainImpl(gameRepository: resolve()) as GameDomain
         }
     }
 }

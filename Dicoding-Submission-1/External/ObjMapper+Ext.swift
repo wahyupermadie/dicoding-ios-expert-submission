@@ -18,7 +18,9 @@ extension Array where Element == Game {
                 backgroundImage: game.backgroundImage ?? "",
                 rating: game.rating ?? 0.0,
                 description: game.description ?? "",
-                playtime: game.playtime ?? 0
+                playtime: game.playtime ?? 0,
+                genres: game.getGenres(),
+                gameClip: game.clip?.clip ?? ""
             )
         }
     }
@@ -34,7 +36,9 @@ extension GameResponse {
                 backgroundImage: game.backgroundImage ?? "",
                 rating: game.rating ?? 0.0,
                 description: game.description ?? "",
-                playtime: game.playtime ?? 0
+                playtime: game.playtime ?? 0,
+                genres: game.getGenres(),
+                gameClip: game.clip?.clip ?? ""
             )
         }
     }
@@ -49,5 +53,29 @@ extension Results {
             }
         }
         return array
+    }
+}
+
+extension Game {
+    func getGenres() -> String {
+        guard let genres = self.genres else { return ""}
+        return genres.map{ $0.name ?? "" }.joined(separator: ", ")
+    }
+}
+
+extension LocalGameEntity {
+    func convertToModel() -> GameModel {
+        return GameModel(
+            id: self.id,
+            name: self.name,
+            released: self.released,
+            backgroundImage: self.backgroundImage!,
+            rating: self.rating,
+            description: self.desc,
+            playtime: self.playTime,
+            genres: self.genres,
+            gameClip: self.gameClip,
+            isFavorite: self.isFavorite
+        )
     }
 }

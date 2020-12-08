@@ -9,26 +9,31 @@ import SwiftUI
 import Resolver
 
 struct ContentView: View {
-    @ObservedObject var viewModel: HomeViewModel
     
-    init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
-    }
-
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-            .onAppear(perform: {
-                        self.viewModel.getCategories()
-                
-                }
-            )
+        TabView {
+            HomeView(viewModel: Resolver.resolve())
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+            }
+            HomeView(viewModel: Resolver.resolve())
+                .tabItem{
+                    Image(systemName: "star.fill")
+                    Text("Favorite")
+            }
+            HomeView(viewModel: Resolver.resolve())
+                .tabItem{
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+            }
+        }
     }
 }
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: Resolver.resolve())
+        ContentView()
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension String {
     func convertToDate() -> Date {
@@ -22,4 +23,16 @@ extension Date {
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
+}
+
+extension Image {
+    static let icCalendar: Image = Image(systemName: "calendar")
+    static let icTimer: Image = Image(systemName: "timer")
+    static let icFavorite: Image = Image(systemName: "heart")
+    static let icFavoriteFilled: Image = Image(systemName: "heart.fill")
+    static let icSearch: Image = Image(systemName: "magnifyingglass")
+    static let icHome: Image = Image(systemName: "house.fill")
+    static let icStar: Image = Image(systemName: "star.fill")
+    static let icPerson: Image = Image(systemName: "person.fill")
+    
 }

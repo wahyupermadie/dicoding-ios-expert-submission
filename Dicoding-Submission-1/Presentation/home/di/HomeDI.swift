@@ -11,7 +11,11 @@ import Resolver
 extension Resolver {
     static func resgiterHomeService() {
         register {
-            HomeViewModel(gameDomain: resolve())
+            HomeDomainImpl(gameRepository: resolve()) as HomeDomain
+        }
+        
+        register {
+            HomeViewModel(homeDomain: resolve())
         }
     }
 }

@@ -15,4 +15,7 @@ struct GameModel {
     var rating: Double = 0.0
     var description: String = ""
     var playtime: Int = 0
+    var genres: String = ""
+    var gameClip: String = ""
+    var isFavorite: Bool = false
 }

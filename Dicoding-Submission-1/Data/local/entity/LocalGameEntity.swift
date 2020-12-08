@@ -18,6 +18,8 @@ class LocalGameEntity: Object {
     @objc dynamic var desc: String = ""
     @objc dynamic var released: Date? = nil
     @objc dynamic var isFavorite: Bool = false
+    @objc dynamic var genres: String = ""
+    @objc dynamic var gameClip: String = ""
     override static func primaryKey() -> String? {
         return "id"
     }

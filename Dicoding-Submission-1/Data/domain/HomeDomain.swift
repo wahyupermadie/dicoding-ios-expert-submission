@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-protocol GameDomain {
+protocol HomeDomain {
     func getGames(search: String?) -> AnyPublisher<[GameModel], Error>
 }
 
-class GameDomainImpl: GameDomain {
+class HomeDomainImpl: HomeDomain {
     let gameRepository: GameRepository
     init(gameRepository: GameRepository) {
         self.gameRepository = gameRepository

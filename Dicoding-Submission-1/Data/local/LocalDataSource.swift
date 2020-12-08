@@ -10,10 +10,11 @@ import RealmSwift
 import Combine
 
 protocol LocalDataSource {
-//    func getFavorite(id: String) -> AnyPublisher<Bool, Error>
-//    func setFavorite(id: String) -> AnyPublisher<Bool, Error>
+    func getFavorites() -> AnyPublisher<[GameModel], Error>
+    func setFavorite(id: String, isFavorite: Bool) -> AnyPublisher<Bool, Error>
     func getLocalData(query: String?) -> AnyPublisher<[GameModel], Error>
     func setLocalData(games: [GameModel]) -> AnyPublisher<Bool, Error>
+    func getDetailGame(gameId: Int) -> AnyPublisher<GameModel, Error>
 }
 
 class LocalDataSourceImpl: LocalDataSource {
@@ -22,14 +23,59 @@ class LocalDataSourceImpl: LocalDataSource {
         self.realm = realm
     }
     
-//    func getFavorite(id: String) -> AnyPublisher<Bool, Error> {
-//
-//    }
-//
-//    func setFavorite(id: String) -> AnyPublisher<Bool, Error> {
-//        <#code#>
-//    }
-//
+    func getDetailGame(gameId: Int) -> AnyPublisher<GameModel, Error> {
+        return Future<GameModel, Error> { completion in
+            if let realm = self.realm {
+                let game = realm.objects(LocalGameEntity.self).filter("id= %@", gameId).first
+                let detailGame = game.map { (local) -> GameModel in
+                    return local.convertToModel()
+                }
+                if detailGame != nil {
+                    completion(.success(detailGame!))
+                }
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func getFavorites() -> AnyPublisher<[GameModel], Error> {
+        return Future<[GameModel], Error> { completion in
+            if let realm = self.realm {
+                let games: Results<LocalGameEntity> = {
+                    realm.objects(LocalGameEntity.self).filter("isFavorite= true")
+                }()
+                
+                let gamesData = games.toArray(ofType: LocalGameEntity.self).compactMap { (game) -> GameModel? in
+                    return game.convertToModel()
+                }
+                completion(.success(gamesData))
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func setFavorite(id: String, isFavorite: Bool) -> AnyPublisher<Bool, Error> {
+        return Future<Bool, Error> { completion in
+            if let realm = self.realm {
+                let game = realm.objects(LocalGameEntity.self).filter("id = %@", id).first
+                
+                do {
+                    try realm.write {
+                        game?.isFavorite = isFavorite
+                        completion(.success(true))
+                    }
+                } catch {
+                    completion(.failure(DatabaseError.requestFailed))
+                }
+                
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+        }.eraseToAnyPublisher()
+    }
+
     func getLocalData(query: String?) -> AnyPublisher<[GameModel], Error> {
         return Future<[GameModel], Error> { completion in
             if let realm = self.realm {
@@ -37,15 +83,7 @@ class LocalDataSourceImpl: LocalDataSource {
                     realm.objects(LocalGameEntity.self)
                 }()
                 let gamesData = games.toArray(ofType: LocalGameEntity.self).compactMap { (game) -> GameModel in
-                    return GameModel(
-                        id: game.id,
-                        name: game.name,
-                        released: game.released,
-                        backgroundImage: game.backgroundImage!,
-                        rating: game.rating,
-                        description: game.desc,
-                        playtime: game.playTime
-                    )
+                    return game.convertToModel()
                 }
                 completion(.success(gamesData))
             } else {
@@ -67,7 +105,8 @@ class LocalDataSourceImpl: LocalDataSource {
                             local.backgroundImage = game.backgroundImage
                             local.released = game.released
                             local.rating = game.rating
-                            
+                            local.genres = game.genres
+                            local.gameClip = game.gameClip
                             realm.add(local, update: .all)
                         }
                         
