@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import Alamofire
 
-protocol GameRepository{
+protocol GameRepository {
     func getGames(search: String?) -> AnyPublisher<[GameModel], Error>
 }
 
@@ -24,12 +24,11 @@ class GameRepositoryImpl: GameRepository {
     func getGames(search: String?) -> AnyPublisher<[GameModel], Error> {
         return self.localDataSource.getLocalData(query: search)
             .flatMap { result -> AnyPublisher<[GameModel], Error> in
-                print(result)
-                if result.count <= 0 {
+                if result.isEmpty {
                     return self.remoteDataSource.getGames(search: search)!
                         .map {
                             $0.mapToModel()
-                        }.flatMap{
+                        }.flatMap {
                             self.localDataSource.setLocalData(games: $0)
                         }.flatMap { _ in
                             self.localDataSource.getLocalData(query: search)

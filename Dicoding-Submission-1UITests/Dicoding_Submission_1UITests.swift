@@ -7,7 +7,7 @@
 
 import XCTest
 
-class Dicoding_Submission_1UITests: XCTestCase {
+class DicodingSubmissionUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

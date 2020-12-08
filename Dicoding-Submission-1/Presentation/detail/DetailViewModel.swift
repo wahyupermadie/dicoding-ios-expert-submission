@@ -13,11 +13,31 @@ class DetailViewModel: ObservableObject {
     @Published var loadingState: Bool = false
     @Published var errorMessage: String = ""
     @Published var game: GameModel? = nil
+    @Published var isFavorite: Bool = false
     let detailDmain: DetailDomain
     init(detailDmain: DetailDomain) {
         self.detailDmain = detailDmain
     }
     
+    func setFavorite(id: Int, isFavorite: Bool) {
+        detailDmain.setFavorite(id: id, isFavorite: isFavorite)
+            .receive(on: RunLoop.main)
+            .sink { (completion) in
+                switch completion {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                case .finished:
+                    print("finished")
+                }
+            } receiveValue: { (result) in
+                if result == true && isFavorite == true {
+                    self.isFavorite = true
+                } else if result == true && isFavorite == false {
+                    self.isFavorite = false
+                }
+            }.store(in: &cancellables)
+
+    }
     func getDetailGame(gameId: Int) {
         self.loadingState = true
         detailDmain.getDetailGame(gameId: gameId)
@@ -30,6 +50,7 @@ class DetailViewModel: ObservableObject {
                         self.loadingState = false
                 }
             } receiveValue: { game in
+                self.isFavorite = game.isFavorite
                 self.game = game
             }.store(in: &cancellables)
 

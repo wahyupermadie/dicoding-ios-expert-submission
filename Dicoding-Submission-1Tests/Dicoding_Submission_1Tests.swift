@@ -8,7 +8,7 @@
 import XCTest
 @testable import Dicoding_Submission_1
 
-class Dicoding_Submission_1Tests: XCTestCase {
+class DicodingSubmissionTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

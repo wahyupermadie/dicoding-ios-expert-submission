@@ -9,7 +9,7 @@ import SwiftUI
 import Resolver
 
 @main
-struct Dicoding_Submission_1App: App {
+struct DicodingSubmissionApp: App {
     
     var body: some Scene {
         WindowGroup {

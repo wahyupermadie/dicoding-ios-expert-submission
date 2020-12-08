@@ -11,7 +11,7 @@ import Combine
 
 protocol LocalDataSource {
     func getFavorites() -> AnyPublisher<[GameModel], Error>
-    func setFavorite(id: String, isFavorite: Bool) -> AnyPublisher<Bool, Error>
+    func setFavorite(id: Int, isFavorite: Bool) -> AnyPublisher<Bool, Error>
     func getLocalData(query: String?) -> AnyPublisher<[GameModel], Error>
     func setLocalData(games: [GameModel]) -> AnyPublisher<Bool, Error>
     func getDetailGame(gameId: Int) -> AnyPublisher<GameModel, Error>
@@ -56,7 +56,7 @@ class LocalDataSourceImpl: LocalDataSource {
         }.eraseToAnyPublisher()
     }
     
-    func setFavorite(id: String, isFavorite: Bool) -> AnyPublisher<Bool, Error> {
+    func setFavorite(id: Int, isFavorite: Bool) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { completion in
             if let realm = self.realm {
                 let game = realm.objects(LocalGameEntity.self).filter("id = %@", id).first
@@ -107,6 +107,7 @@ class LocalDataSourceImpl: LocalDataSource {
                             local.rating = game.rating
                             local.genres = game.genres
                             local.gameClip = game.gameClip
+                            local.desc = game.description
                             realm.add(local, update: .all)
                         }
                         

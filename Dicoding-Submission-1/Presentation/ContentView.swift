@@ -17,12 +17,12 @@ struct ContentView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
             }
-            HomeView(viewModel: Resolver.resolve())
+            FavoriteView(viewModel: Resolver.resolve())
                 .tabItem{
                     Image(systemName: "star.fill")
                     Text("Favorite")
             }
-            HomeView(viewModel: Resolver.resolve())
+            ProfileView()
                 .tabItem{
                     Image(systemName: "person.fill")
                     Text("Profile")

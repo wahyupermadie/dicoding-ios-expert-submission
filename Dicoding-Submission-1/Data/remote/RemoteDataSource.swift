@@ -39,6 +39,7 @@ class RemoteDataSourceImpl: RemoteDataSource {
                 .responseDecodable(of: GameResponse.self) { resp in
                     switch resp.result {
                     case .success(let data):
+                        print(data.results)
                         completion(.success(data))
                     case .failure(let error):
                         completion(.failure(error))

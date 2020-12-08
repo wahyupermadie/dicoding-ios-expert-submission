@@ -14,6 +14,7 @@ extension Resolver: ResolverRegistering {
         registerDataService()
         resgiterHomeService()
         registerDetailService()
+        resgiterFavoriteService()
     }
     
     public static func registerDataService() {
@@ -29,7 +30,7 @@ extension Resolver: ResolverRegistering {
             URL(string: "https://api.rawg.io/api/")!
         }
         
-        register{
+        register {
             RemoteDataSourceImpl(baseUrl: resolve()) as RemoteDataSource
         }
         

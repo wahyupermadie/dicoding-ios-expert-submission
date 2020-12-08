@@ -22,8 +22,6 @@
 		890C1516257E2E2E00DA8D53 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1515257E2E2E00DA8D53 /* Genre.swift */; };
 		890C151B257E2EE100DA8D53 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C151A257E2EE100DA8D53 /* Clip.swift */; };
 		890C1520257E36E000DA8D53 /* Common+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C151F257E36E000DA8D53 /* Common+Ext.swift */; };
-		890C1534257E4A2500DA8D53 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1533257E4A2500DA8D53 /* Injectable.swift */; };
-		890C1539257E4A3F00DA8D53 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1538257E4A3F00DA8D53 /* Resolver.swift */; };
 		890C153E257E4B5800DA8D53 /* DependencyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C153D257E4B5800DA8D53 /* DependencyComponent.swift */; };
 		890C1546257E535D00DA8D53 /* HomeDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1545257E535D00DA8D53 /* HomeDomain.swift */; };
 		890C154C257E56EE00DA8D53 /* LocalGameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C154B257E56EE00DA8D53 /* LocalGameEntity.swift */; };
@@ -43,6 +41,14 @@
 		890C15C7257F6B1E00DA8D53 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C15C6257F6B1E00DA8D53 /* DetailViewModel.swift */; };
 		890C15CF257F6D1B00DA8D53 /* DetailDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C15CE257F6D1B00DA8D53 /* DetailDomain.swift */; };
 		890C15D5257F71FD00DA8D53 /* DetailDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C15D4257F71FD00DA8D53 /* DetailDI.swift */; };
+		890C15DE257F814400DA8D53 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C15DD257F814400DA8D53 /* PlayerView.swift */; };
+		890C15E3257F816300DA8D53 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C15E2257F816300DA8D53 /* VideoView.swift */; };
+		890C15E9257FB21E00DA8D53 /* FavoriteDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C15E8257FB21E00DA8D53 /* FavoriteDomain.swift */; };
+		890C15EF257FB3E500DA8D53 /* FavoriteDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C15EE257FB3E500DA8D53 /* FavoriteDI.swift */; };
+		890C15F7257FB3F100DA8D53 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C15F6257FB3F100DA8D53 /* FavoriteView.swift */; };
+		890C15FC257FB40B00DA8D53 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C15FB257FB40B00DA8D53 /* FavoriteViewModel.swift */; };
+		890C1601257FCC5200DA8D53 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C1600257FCC5200DA8D53 /* ProfileView.swift */; };
+		890C160D257FD86A00DA8D53 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 890C160C257FD86A00DA8D53 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +91,6 @@
 		890C1515257E2E2E00DA8D53 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		890C151A257E2EE100DA8D53 /* Clip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
 		890C151F257E36E000DA8D53 /* Common+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Common+Ext.swift"; sourceTree = "<group>"; };
-		890C1533257E4A2500DA8D53 /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
-		890C1538257E4A3F00DA8D53 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		890C153D257E4B5800DA8D53 /* DependencyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyComponent.swift; sourceTree = "<group>"; };
 		890C1545257E535D00DA8D53 /* HomeDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDomain.swift; sourceTree = "<group>"; };
 		890C154B257E56EE00DA8D53 /* LocalGameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGameEntity.swift; sourceTree = "<group>"; };
@@ -106,6 +110,14 @@
 		890C15C6257F6B1E00DA8D53 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		890C15CE257F6D1B00DA8D53 /* DetailDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDomain.swift; sourceTree = "<group>"; };
 		890C15D4257F71FD00DA8D53 /* DetailDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDI.swift; sourceTree = "<group>"; };
+		890C15DD257F814400DA8D53 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		890C15E2257F816300DA8D53 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		890C15E8257FB21E00DA8D53 /* FavoriteDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDomain.swift; sourceTree = "<group>"; };
+		890C15EE257FB3E500DA8D53 /* FavoriteDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDI.swift; sourceTree = "<group>"; };
+		890C15F6257FB3F100DA8D53 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		890C15FB257FB40B00DA8D53 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		890C1600257FCC5200DA8D53 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		890C160C257FD86A00DA8D53 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		894E56EE3F59D5A7337002C9 /* Pods-Dicoding-Submission-1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dicoding-Submission-1.release.xcconfig"; path = "Target Support Files/Pods-Dicoding-Submission-1/Pods-Dicoding-Submission-1.release.xcconfig"; sourceTree = "<group>"; };
 		9EE84D42DA65D58FDD7B010B /* Pods-Dicoding-Submission-1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dicoding-Submission-1Tests.release.xcconfig"; path = "Target Support Files/Pods-Dicoding-Submission-1Tests/Pods-Dicoding-Submission-1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BFBC857FE7673BE062763511 /* Pods-Dicoding-Submission-1-Dicoding-Submission-1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dicoding-Submission-1-Dicoding-Submission-1UITests.debug.xcconfig"; path = "Target Support Files/Pods-Dicoding-Submission-1-Dicoding-Submission-1UITests/Pods-Dicoding-Submission-1-Dicoding-Submission-1UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +166,7 @@
 		890C1491257E053E00DA8D53 = {
 			isa = PBXGroup;
 			children = (
+				890C160C257FD86A00DA8D53 /* .swiftlint.yml */,
 				890C149C257E053E00DA8D53 /* Dicoding-Submission-1 */,
 				890C14AE257E054100DA8D53 /* Dicoding-Submission-1Tests */,
 				890C14B9257E054100DA8D53 /* Dicoding-Submission-1UITests */,
@@ -262,8 +275,6 @@
 		890C14E9257E0A2100DA8D53 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				890C1533257E4A2500DA8D53 /* Injectable.swift */,
-				890C1538257E4A3F00DA8D53 /* Resolver.swift */,
 				890C153D257E4B5800DA8D53 /* DependencyComponent.swift */,
 			);
 			path = DI;
@@ -282,6 +293,7 @@
 			children = (
 				890C1545257E535D00DA8D53 /* HomeDomain.swift */,
 				890C15CE257F6D1B00DA8D53 /* DetailDomain.swift */,
+				890C15E8257FB21E00DA8D53 /* FavoriteDomain.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -351,6 +363,7 @@
 		890C1593257F334A00DA8D53 /* widget */ = {
 			isa = PBXGroup;
 			children = (
+				890C15DC257F813600DA8D53 /* video */,
 				890C1594257F336100DA8D53 /* ActivityIndicatorView.swift */,
 				890C15A2257F358F00DA8D53 /* GameView.swift */,
 				890C15AA257F464F00DA8D53 /* ImageView.swift */,
@@ -379,6 +392,9 @@
 		890C15BC257F62A900DA8D53 /* favorite */ = {
 			isa = PBXGroup;
 			children = (
+				890C15ED257FB3D800DA8D53 /* di */,
+				890C15F6257FB3F100DA8D53 /* FavoriteView.swift */,
+				890C15FB257FB40B00DA8D53 /* FavoriteViewModel.swift */,
 			);
 			path = favorite;
 			sourceTree = "<group>";
@@ -386,6 +402,7 @@
 		890C15BD257F62B100DA8D53 /* profil */ = {
 			isa = PBXGroup;
 			children = (
+				890C1600257FCC5200DA8D53 /* ProfileView.swift */,
 			);
 			path = profil;
 			sourceTree = "<group>";
@@ -394,6 +411,23 @@
 			isa = PBXGroup;
 			children = (
 				890C15D4257F71FD00DA8D53 /* DetailDI.swift */,
+			);
+			path = di;
+			sourceTree = "<group>";
+		};
+		890C15DC257F813600DA8D53 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				890C15DD257F814400DA8D53 /* PlayerView.swift */,
+				890C15E2257F816300DA8D53 /* VideoView.swift */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		890C15ED257FB3D800DA8D53 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				890C15EE257FB3E500DA8D53 /* FavoriteDI.swift */,
 			);
 			path = di;
 			sourceTree = "<group>";
@@ -423,6 +457,7 @@
 				890C1497257E053E00DA8D53 /* Frameworks */,
 				890C1498257E053E00DA8D53 /* Resources */,
 				95942F078A01EC57CFA26F84 /* [CP] Embed Pods Frameworks */,
+				890C1605257FD7D300DA8D53 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -519,6 +554,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890C160D257FD86A00DA8D53 /* .swiftlint.yml in Resources */,
 				890C14A5257E054100DA8D53 /* Preview Assets.xcassets in Resources */,
 				890C14A2257E054100DA8D53 /* Assets.xcassets in Resources */,
 			);
@@ -562,6 +598,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		890C1605257FD7D300DA8D53 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then \n    swiftlint \nelse \n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" \nfi\n";
 		};
 		95942F078A01EC57CFA26F84 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -651,18 +704,22 @@
 				890C15CF257F6D1B00DA8D53 /* DetailDomain.swift in Sources */,
 				890C15AB257F464F00DA8D53 /* ImageView.swift in Sources */,
 				890C1568257E746C00DA8D53 /* ErrorState.swift in Sources */,
+				890C15DE257F814400DA8D53 /* PlayerView.swift in Sources */,
 				890C1516257E2E2E00DA8D53 /* Genre.swift in Sources */,
 				890C15A3257F358F00DA8D53 /* GameView.swift in Sources */,
 				890C15C7257F6B1E00DA8D53 /* DetailViewModel.swift in Sources */,
+				890C15E9257FB21E00DA8D53 /* FavoriteDomain.swift in Sources */,
 				890C14A0257E053E00DA8D53 /* ContentView.swift in Sources */,
+				890C15E3257F816300DA8D53 /* VideoView.swift in Sources */,
 				890C1586257E879800DA8D53 /* HomeViewModel.swift in Sources */,
 				890C15BF257F66B900DA8D53 /* DetailGame.swift in Sources */,
 				890C154C257E56EE00DA8D53 /* LocalGameEntity.swift in Sources */,
+				890C15FC257FB40B00DA8D53 /* FavoriteViewModel.swift in Sources */,
 				890C156E257E7B9000DA8D53 /* RemoteDataSource.swift in Sources */,
 				890C1520257E36E000DA8D53 /* Common+Ext.swift in Sources */,
-				890C1539257E4A3F00DA8D53 /* Resolver.swift in Sources */,
 				890C1558257E6DA700DA8D53 /* GameModel.swift in Sources */,
 				890C15D5257F71FD00DA8D53 /* DetailDI.swift in Sources */,
+				890C15F7257FB3F100DA8D53 /* FavoriteView.swift in Sources */,
 				890C149E257E053E00DA8D53 /* Dicoding_Submission_1App.swift in Sources */,
 				890C1546257E535D00DA8D53 /* HomeDomain.swift in Sources */,
 				890C1504257E2DBF00DA8D53 /* GameRepository.swift in Sources */,
@@ -671,9 +728,10 @@
 				890C151B257E2EE100DA8D53 /* Clip.swift in Sources */,
 				890C1552257E609D00DA8D53 /* LocalDataSource.swift in Sources */,
 				890C158C257E89B800DA8D53 /* HomeDI.swift in Sources */,
+				890C1601257FCC5200DA8D53 /* ProfileView.swift in Sources */,
+				890C15EF257FB3E500DA8D53 /* FavoriteDI.swift in Sources */,
 				890C159E257F347100DA8D53 /* Navigation.swift in Sources */,
 				890C1595257F336100DA8D53 /* ActivityIndicatorView.swift in Sources */,
-				890C1534257E4A2500DA8D53 /* Injectable.swift in Sources */,
 				890C153E257E4B5800DA8D53 /* DependencyComponent.swift in Sources */,
 				890C1511257E2E1200DA8D53 /* Game.swift in Sources */,
 				890C157E257E878C00DA8D53 /* HomeView.swift in Sources */,

@@ -1,26 +1,31 @@
 //
-//  HomeView.swift
+//  FavoriteView.swift
 //  Dicoding-Submission-1
 //
-//  Created by Wahyu Permadi on 07/12/20.
+//  Created by Wahyu Permadi on 08/12/20.
 //
 
 import SwiftUI
 import Resolver
 
-struct HomeView: View {
-    @ObservedObject var viewModel: HomeViewModel
-    init(viewModel: HomeViewModel) {
+struct FavoriteView: View {
+    @ObservedObject var viewModel: FavoriteViewModel
+    init(viewModel: FavoriteViewModel) {
         self.viewModel = viewModel
     }
-    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
-                if self.viewModel.loadingState {
-                    Text("Loading Bro")
+                if self.viewModel.isLoading {
+                    ActivityIndicatorView()
                 } else {
-                    if self.viewModel.games.isEmpty {
+                    if viewModel.games.isEmpty {
+                        ForEach(self.viewModel.games, id: \.id) { game in
+                            navigateToDetailPage(for: game.id) {
+                                GameView(game: game)
+                            }
+                        }
+                    } else {
                         VStack {
                             Spacer()
                             Image("empty_state")
@@ -28,29 +33,23 @@ struct HomeView: View {
                                 .frame(width: UIScreen.main.bounds.width - 80)
                                 .scaledToFit()
                                 .clipped()
-                            Text("Sepertinya tidak ada Game yang ditemukan")
+                            Text("Sepertinya anda belum menambahkan Game Favorite")
                                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                 .font(.system(size: 12))
                                 .foregroundColor(.gray)
                                 .multilineTextAlignment(.center)
                         }
-                    } else {
-                        ForEach(self.viewModel.games, id: \.id) { game in
-                            navigateToDetailPage(for: game.id) {
-                                GameView(game: game)
-                            }
-                        }
                     }
                 }
             }.onAppear(perform: {
-                self.viewModel.getGames(name: nil)
-            }).navigationTitle(Text("Games Catalogue"))
+                self.viewModel.getFavorites()
+            }).navigationTitle(Text("Favorite Games"))
         }
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct FavoriteView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewModel: Resolver.resolve())
+        FavoriteView(viewModel: Resolver.resolve())
     }
 }
