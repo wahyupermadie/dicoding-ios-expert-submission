@@ -33,6 +33,5 @@ extension Image {
     static let icSearch: Image = Image(systemName: "magnifyingglass")
     static let icHome: Image = Image(systemName: "house.fill")
     static let icStar: Image = Image(systemName: "star.fill")
-    static let icPerson: Image = Image(systemName: "person.fill")
-    
+    static let icPerson: Image = Image(systemName: "person.fill")    
 }

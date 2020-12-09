@@ -16,7 +16,6 @@ extension Resolver: ResolverRegistering {
         registerDetailService()
         resgiterFavoriteService()
     }
-    
     public static func registerDataService() {
         register {
             try! Realm()

@@ -13,7 +13,6 @@ struct ImageView: View {
     init(url: String) {
         self.url = url
     }
-    
     var body: some View {
         GeometryReader { geo in
             WebImage(url: URL(string: self.url))

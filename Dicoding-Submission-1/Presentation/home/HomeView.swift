@@ -18,7 +18,7 @@ struct HomeView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 if self.viewModel.loadingState {
-                    Text("Loading Bro")
+                    ActivityIndicatorView()
                 } else {
                     if self.viewModel.games.isEmpty {
                         VStack {

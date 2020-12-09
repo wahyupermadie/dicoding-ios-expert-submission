@@ -12,7 +12,7 @@ extension Array where Element == Game {
     func mapToModel() -> [GameModel] {
         self.map { (game) in
             return GameModel(
-                id: game.id ?? 0,
+                id: game.gameId ?? 0,
                 name: game.name ?? "",
                 released: game.released,
                 backgroundImage: game.backgroundImage ?? "",
@@ -30,7 +30,7 @@ extension GameResponse {
     func mapToModel() -> [GameModel] {
         self.results.map { (game) in
             return GameModel(
-                id: game.id ?? 0,
+                id: game.gameId ?? 0,
                 name: game.name ?? "",
                 released: game.released,
                 backgroundImage: game.backgroundImage ?? "",
@@ -59,7 +59,7 @@ extension Results {
 extension Game {
     func getGenres() -> String {
         guard let genres = self.genres else { return ""}
-        return genres.map{ $0.name ?? "" }.joined(separator: ", ")
+        return genres.map { $0.name ?? "" }.joined(separator: ", ")
     }
 }
 

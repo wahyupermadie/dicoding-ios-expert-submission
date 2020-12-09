@@ -9,7 +9,6 @@ import SwiftUI
 import Resolver
 
 struct ContentView: View {
-    
     var body: some View {
         TabView {
             HomeView(viewModel: Resolver.resolve())
@@ -18,19 +17,18 @@ struct ContentView: View {
                     Text("Home")
             }
             FavoriteView(viewModel: Resolver.resolve())
-                .tabItem{
+                .tabItem {
                     Image(systemName: "star.fill")
                     Text("Favorite")
             }
             ProfileView()
-                .tabItem{
+                .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
             }
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

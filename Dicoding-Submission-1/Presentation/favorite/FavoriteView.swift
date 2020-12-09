@@ -20,12 +20,6 @@ struct FavoriteView: View {
                     ActivityIndicatorView()
                 } else {
                     if viewModel.games.isEmpty {
-                        ForEach(self.viewModel.games, id: \.id) { game in
-                            navigateToDetailPage(for: game.id) {
-                                GameView(game: game)
-                            }
-                        }
-                    } else {
                         VStack {
                             Spacer()
                             Image("empty_state")
@@ -38,6 +32,12 @@ struct FavoriteView: View {
                                 .font(.system(size: 12))
                                 .foregroundColor(.gray)
                                 .multilineTextAlignment(.center)
+                        }
+                    } else {
+                        ForEach(self.viewModel.games, id: \.id) { game in
+                            navigateToDetailPage(for: game.id) {
+                                GameView(game: game)
+                            }
                         }
                     }
                 }

@@ -8,8 +8,8 @@
 import Foundation
 
 // MARK: - Result
-struct Game: Codable, Identifiable {
-    let id: Int?
+struct Game: Codable {
+    let gameId: Int?
     let name: String?
     let released: Date?
     let backgroundImage: String?
@@ -21,15 +21,16 @@ struct Game: Codable, Identifiable {
     let clip: Clip?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, released
+        case gameId = "id"
+        case name, released
         case moviesCount = "movies_count"
         case description = "description_raw"
         case backgroundImage = "background_image"
         case rating, playtime, genres, clip
     }
         
-    init(id: Int?, name: String?, description: String?, rating: Double?, backgroundImage: String?, released: Date?, playtime: Int?, genres: [Genre]?, clip: Clip?, movieCount: Int?) {
-        self.id = id
+    init(gameId: Int?, name: String?, description: String?, rating: Double?, backgroundImage: String?, released: Date?, playtime: Int?, genres: [Genre]?, clip: Clip?, movieCount: Int?) {
+        self.gameId = gameId
         self.name = name
         self.description = description
         self.rating = rating
@@ -44,7 +45,7 @@ struct Game: Codable, Identifiable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         moviesCount = try? container.decode(Int.self, forKey: .moviesCount)
-        id = try? container.decode(Int.self, forKey: .id)
+        gameId = try? container.decode(Int.self, forKey: .gameId)
         name = try? container.decode(String.self, forKey: .name)
         description = try? container.decode(String.self, forKey: .description)
         released = try? container.decode(String.self, forKey: .released).convertToDate()

@@ -14,7 +14,7 @@ extension Resolver {
             FavoriteDomainImpl(localDataSource: resolve()) as FavoriteDomain
         }
         
-        register{
+        register {
             FavoriteViewModel(favoriteDomain: resolve())
         }
     }

@@ -17,8 +17,7 @@ struct GameView: View {
             ImageView(url: self.game.backgroundImage)
                 .clipped()
                 .frame(width: 85, height: 85)
-                .cornerRadius(10)
-            
+                .cornerRadius(10)            
             VStack(alignment: .leading) {
                 Text(game.name)
                     .font(.title)
@@ -38,7 +37,7 @@ struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView(game: GameModel(
             id: 1234,
-            name:"Wahyu",
+            name: "Wahyu",
             genres: "Action, Horor"
         ))
     }

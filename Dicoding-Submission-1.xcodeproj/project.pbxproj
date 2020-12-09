@@ -190,12 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				890C14E9257E0A2100DA8D53 /* DI */,
+				890C14E6257E0A0500DA8D53 /* Data */,
+				890C161125811A1700DA8D53 /* Supporting Files */,
 				890C14E8257E0A1400DA8D53 /* External */,
 				890C14E7257E0A0A00DA8D53 /* Presentation */,
-				890C14E6257E0A0500DA8D53 /* Data */,
-				890C14E5257E09F200DA8D53 /* Core */,
-				890C14A1257E054100DA8D53 /* Assets.xcassets */,
-				890C14A6257E054100DA8D53 /* Info.plist */,
 				890C14A3257E054100DA8D53 /* Preview Content */,
 			);
 			path = "Dicoding-Submission-1";
@@ -227,14 +225,6 @@
 			path = "Dicoding-Submission-1UITests";
 			sourceTree = "<group>";
 		};
-		890C14E5257E09F200DA8D53 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				890C149D257E053E00DA8D53 /* Dicoding_Submission_1App.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		890C14E6257E0A0500DA8D53 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,7 +232,6 @@
 				890C1556257E6D9800DA8D53 /* model */,
 				890C1501257E2D7A00DA8D53 /* entity */,
 				890C1500257E2D7500DA8D53 /* local */,
-				890C14FF257E2D7000DA8D53 /* domain */,
 				890C14FC257E2D4500DA8D53 /* repository */,
 			);
 			path = Data;
@@ -288,16 +277,6 @@
 			path = repository;
 			sourceTree = "<group>";
 		};
-		890C14FF257E2D7000DA8D53 /* domain */ = {
-			isa = PBXGroup;
-			children = (
-				890C1545257E535D00DA8D53 /* HomeDomain.swift */,
-				890C15CE257F6D1B00DA8D53 /* DetailDomain.swift */,
-				890C15E8257FB21E00DA8D53 /* FavoriteDomain.swift */,
-			);
-			path = domain;
-			sourceTree = "<group>";
-		};
 		890C1500257E2D7500DA8D53 /* local */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,7 +289,6 @@
 		890C1501257E2D7A00DA8D53 /* entity */ = {
 			isa = PBXGroup;
 			children = (
-				890C150B257E2DF900DA8D53 /* GameResponse.swift */,
 				890C1510257E2E1200DA8D53 /* Game.swift */,
 				890C1515257E2E2E00DA8D53 /* Genre.swift */,
 				890C151A257E2EE100DA8D53 /* Clip.swift */,
@@ -337,6 +315,7 @@
 		890C156C257E7B5000DA8D53 /* remote */ = {
 			isa = PBXGroup;
 			children = (
+				890C161225811AE900DA8D53 /* entity */,
 				890C156D257E7B9000DA8D53 /* RemoteDataSource.swift */,
 			);
 			path = remote;
@@ -345,6 +324,7 @@
 		890C157C257E877F00DA8D53 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				890C161E25811B6400DA8D53 /* domain */,
 				890C158A257E89A900DA8D53 /* di */,
 				890C157D257E878C00DA8D53 /* HomeView.swift */,
 				890C1585257E879800DA8D53 /* HomeViewModel.swift */,
@@ -382,6 +362,7 @@
 		890C15BB257F62A300DA8D53 /* detail */ = {
 			isa = PBXGroup;
 			children = (
+				890C161D25811B5800DA8D53 /* domain */,
 				890C15D3257F71F400DA8D53 /* di */,
 				890C15BE257F66B900DA8D53 /* DetailGame.swift */,
 				890C15C6257F6B1E00DA8D53 /* DetailViewModel.swift */,
@@ -392,6 +373,7 @@
 		890C15BC257F62A900DA8D53 /* favorite */ = {
 			isa = PBXGroup;
 			children = (
+				890C161625811B4600DA8D53 /* domain */,
 				890C15ED257FB3D800DA8D53 /* di */,
 				890C15F6257FB3F100DA8D53 /* FavoriteView.swift */,
 				890C15FB257FB40B00DA8D53 /* FavoriteViewModel.swift */,
@@ -430,6 +412,48 @@
 				890C15EE257FB3E500DA8D53 /* FavoriteDI.swift */,
 			);
 			path = di;
+			sourceTree = "<group>";
+		};
+		890C161125811A1700DA8D53 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				890C149D257E053E00DA8D53 /* Dicoding_Submission_1App.swift */,
+				890C14A6257E054100DA8D53 /* Info.plist */,
+				890C14A1257E054100DA8D53 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		890C161225811AE900DA8D53 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				890C150B257E2DF900DA8D53 /* GameResponse.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		890C161625811B4600DA8D53 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				890C15E8257FB21E00DA8D53 /* FavoriteDomain.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		890C161D25811B5800DA8D53 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				890C15CE257F6D1B00DA8D53 /* DetailDomain.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		890C161E25811B6400DA8D53 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				890C1545257E535D00DA8D53 /* HomeDomain.swift */,
+			);
+			path = domain;
 			sourceTree = "<group>";
 		};
 		8D055030FBDCAC255AA0F189 /* Pods */ = {
@@ -896,7 +920,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Dicoding-Submission-1/Preview Content\"";
 				DEVELOPMENT_TEAM = JM56TAFZR9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Dicoding-Submission-1/Info.plist";
+				INFOPLIST_FILE = "Dicoding-Submission-1/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -919,7 +943,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Dicoding-Submission-1/Preview Content\"";
 				DEVELOPMENT_TEAM = JM56TAFZR9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Dicoding-Submission-1/Info.plist";
+				INFOPLIST_FILE = "Dicoding-Submission-1/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

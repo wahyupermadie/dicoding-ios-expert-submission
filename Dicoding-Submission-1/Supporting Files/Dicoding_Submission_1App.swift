@@ -10,11 +10,9 @@ import Resolver
 
 @main
 struct DicodingSubmissionApp: App {
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
 }
-

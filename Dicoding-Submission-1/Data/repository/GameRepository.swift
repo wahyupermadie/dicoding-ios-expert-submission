@@ -20,7 +20,6 @@ class GameRepositoryImpl: GameRepository {
         self.remoteDataSource = remoteDataSource
         self.localDataSource = localDataSource
     }
-    
     func getGames(search: String?) -> AnyPublisher<[GameModel], Error> {
         return self.localDataSource.getLocalData(query: search)
             .flatMap { result -> AnyPublisher<[GameModel], Error> in
