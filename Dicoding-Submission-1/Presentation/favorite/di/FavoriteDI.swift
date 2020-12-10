@@ -11,7 +11,7 @@ import Resolver
 extension Resolver {
     static func resgiterFavoriteService() {
         register {
-            FavoriteDomainImpl(localDataSource: resolve()) as FavoriteDomain
+            FavoriteDomainImpl(repository: resolve()) as FavoriteDomain
         }
         
         register {

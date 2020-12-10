@@ -64,7 +64,7 @@ extension Game {
 }
 
 extension LocalGameEntity {
-    func convertToModel() -> GameModel {
+    func convertObjectToModel() -> GameModel {
         return GameModel(
             id: self.id,
             name: self.name,
@@ -77,5 +77,24 @@ extension LocalGameEntity {
             gameClip: self.gameClip,
             isFavorite: self.isFavorite
         )
+    }
+}
+
+extension Array where Element == LocalGameEntity {
+    func mapToModel() -> [GameModel] {
+        self.map { (game) in
+            return GameModel(
+                id: game.id,
+                name: game.name,
+                released: game.released,
+                backgroundImage: game.backgroundImage!,
+                rating: game.rating,
+                description: game.desc,
+                playtime: game.playTime,
+                genres: game.genres,
+                gameClip: game.gameClip,
+                isFavorite: game.isFavorite
+            )
+        }
     }
 }

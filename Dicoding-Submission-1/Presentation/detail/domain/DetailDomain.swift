@@ -14,15 +14,15 @@ protocol DetailDomain {
 }
 
 class DetailDomainImpl: DetailDomain {
-    let localDataSource: LocalDataSource
-    init(localDataSource: LocalDataSource) {
-        self.localDataSource = localDataSource
+    let repository: GameRepository
+    init(repository: GameRepository) {
+        self.repository = repository
     }
     func getDetailGame(gameId: Int) -> AnyPublisher<GameModel, Error> {
-        return localDataSource.getDetailGame(gameId: gameId)
+        return repository.getDetailGame(gameId: gameId)
     }
     
     func setFavorite(id: Int, isFavorite: Bool) -> AnyPublisher<Bool, Error> {
-        return localDataSource.setFavorite(id: id, isFavorite: isFavorite)
+        return repository.setFavorite(id: id, isFavorite: isFavorite)
     }
 }

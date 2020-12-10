@@ -10,11 +10,11 @@ import RealmSwift
 import Combine
 
 protocol LocalDataSource {
-    func getFavorites() -> AnyPublisher<[GameModel], Error>
+    func getFavorites() -> AnyPublisher<[LocalGameEntity], Error>
     func setFavorite(id: Int, isFavorite: Bool) -> AnyPublisher<Bool, Error>
-    func getLocalData(query: String?) -> AnyPublisher<[GameModel], Error>
+    func getLocalData(query: String?) -> AnyPublisher<[LocalGameEntity], Error>
     func setLocalData(games: [GameModel]) -> AnyPublisher<Bool, Error>
-    func getDetailGame(gameId: Int) -> AnyPublisher<GameModel, Error>
+    func getDetailGame(gameId: Int) -> AnyPublisher<LocalGameEntity, Error>
 }
 
 class LocalDataSourceImpl: LocalDataSource {
@@ -22,40 +22,31 @@ class LocalDataSourceImpl: LocalDataSource {
     init(realm: Realm) {
         self.realm = realm
     }
-    
-    func getDetailGame(gameId: Int) -> AnyPublisher<GameModel, Error> {
-        return Future<GameModel, Error> { completion in
+    func getDetailGame(gameId: Int) -> AnyPublisher<LocalGameEntity, Error> {
+        return Future<LocalGameEntity, Error> { completion in
             if let realm = self.realm {
                 let game = realm.objects(LocalGameEntity.self).filter("id= %@", gameId).first
-                let detailGame = game.map { (local) -> GameModel in
-                    return local.convertToModel()
-                }
-                if detailGame != nil {
-                    completion(.success(detailGame!))
+                if game != nil {
+                    completion(.success(game!))
                 }
             } else {
                 completion(.failure(DatabaseError.invalidInstance))
             }
         }.eraseToAnyPublisher()
     }
-    
-    func getFavorites() -> AnyPublisher<[GameModel], Error> {
-        return Future<[GameModel], Error> { completion in
+    func getFavorites() -> AnyPublisher<[LocalGameEntity], Error> {
+        return Future<[LocalGameEntity], Error> { completion in
             if let realm = self.realm {
                 let games: Results<LocalGameEntity> = {
                     realm.objects(LocalGameEntity.self).filter("isFavorite= true")
                 }()
-                
-                let gamesData = games.toArray(ofType: LocalGameEntity.self).compactMap { (game) -> GameModel? in
-                    return game.convertToModel()
-                }
+                let gamesData = games.toArray(ofType: LocalGameEntity.self)
                 completion(.success(gamesData))
             } else {
                 completion(.failure(DatabaseError.invalidInstance))
             }
         }.eraseToAnyPublisher()
     }
-    
     func setFavorite(id: Int, isFavorite: Bool) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { completion in
             if let realm = self.realm {
@@ -76,15 +67,13 @@ class LocalDataSourceImpl: LocalDataSource {
         }.eraseToAnyPublisher()
     }
 
-    func getLocalData(query: String?) -> AnyPublisher<[GameModel], Error> {
-        return Future<[GameModel], Error> { completion in
+    func getLocalData(query: String?) -> AnyPublisher<[LocalGameEntity], Error> {
+        return Future<[LocalGameEntity], Error> { completion in
             if let realm = self.realm {
                 let games: Results<LocalGameEntity> = {
                     realm.objects(LocalGameEntity.self)
                 }()
-                let gamesData = games.toArray(ofType: LocalGameEntity.self).compactMap { (game) -> GameModel in
-                    return game.convertToModel()
-                }
+                let gamesData = games.toArray(ofType: LocalGameEntity.self)
                 completion(.success(gamesData))
             } else {
                 completion(.failure(DatabaseError.requestFailed))
@@ -110,7 +99,6 @@ class LocalDataSourceImpl: LocalDataSource {
                             local.desc = game.description
                             realm.add(local, update: .all)
                         }
-                        
                         completion(.success(true))
                     }
                 } catch {

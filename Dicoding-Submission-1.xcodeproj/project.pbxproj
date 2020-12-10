@@ -230,7 +230,6 @@
 			children = (
 				890C156C257E7B5000DA8D53 /* remote */,
 				890C1556257E6D9800DA8D53 /* model */,
-				890C1501257E2D7A00DA8D53 /* entity */,
 				890C1500257E2D7500DA8D53 /* local */,
 				890C14FC257E2D4500DA8D53 /* repository */,
 			);
@@ -284,16 +283,6 @@
 				890C1551257E609D00DA8D53 /* LocalDataSource.swift */,
 			);
 			path = local;
-			sourceTree = "<group>";
-		};
-		890C1501257E2D7A00DA8D53 /* entity */ = {
-			isa = PBXGroup;
-			children = (
-				890C1510257E2E1200DA8D53 /* Game.swift */,
-				890C1515257E2E2E00DA8D53 /* Genre.swift */,
-				890C151A257E2EE100DA8D53 /* Clip.swift */,
-			);
-			path = entity;
 			sourceTree = "<group>";
 		};
 		890C154A257E56DE00DA8D53 /* entity */ = {
@@ -427,6 +416,9 @@
 		890C161225811AE900DA8D53 /* entity */ = {
 			isa = PBXGroup;
 			children = (
+				890C1510257E2E1200DA8D53 /* Game.swift */,
+				890C1515257E2E2E00DA8D53 /* Genre.swift */,
+				890C151A257E2EE100DA8D53 /* Clip.swift */,
 				890C150B257E2DF900DA8D53 /* GameResponse.swift */,
 			);
 			path = entity;

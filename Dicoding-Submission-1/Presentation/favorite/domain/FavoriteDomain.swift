@@ -13,11 +13,11 @@ protocol FavoriteDomain {
 }
 
 class FavoriteDomainImpl: FavoriteDomain {
-    let localDataSource: LocalDataSource
-    init(localDataSource: LocalDataSource) {
-        self.localDataSource = localDataSource
+    let repository: GameRepository
+    init(repository: GameRepository) {
+        self.repository = repository
     }
     func getFavorite() -> AnyPublisher<[GameModel], Error> {
-        return localDataSource.getFavorites()
+        return repository.getFavorites()
     }
 }

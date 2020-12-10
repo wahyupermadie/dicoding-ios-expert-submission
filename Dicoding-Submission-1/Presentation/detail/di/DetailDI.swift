@@ -11,7 +11,7 @@ import Resolver
 extension Resolver {
     static func registerDetailService() {
         register {
-            DetailDomainImpl(localDataSource: resolve()) as DetailDomain
+            DetailDomainImpl(repository: resolve()) as DetailDomain
         }
         
         register {
